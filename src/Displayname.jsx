@@ -97,31 +97,32 @@ const FullNameDisplay = () => {
   };
 
   return (
-    <div>
-      <h1>Full Name Display</h1>
-      <form onSubmit={handleSubmit}>
-        <label for="firstName">First Name:</label>
-        <input
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={handleFirstNameChange}
-          required
-        /><br /><br />
-        <label for="lastName">Last Name:</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={handleLastNameChange}
-          required
-        /><br /><br />
-        <button type="submit">Submit</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {submitted && <p>Full name: {fullName}</p>}
-      </form>
-    </div>
-  );
+  
+        <div>
+          <h1>Full Name Display</h1>
+          <form onSubmit={handleSubmit}>
+            <label for="firstName">First Name:</label>
+            <input
+              type="text"
+              id="firstName"
+              value={firstName}
+              onChange={handleFirstNameChange}
+              required
+            /><br /><br />
+            <label for="lastName">Last Name:</label>
+            <input
+              type="text"
+              id="lastName"
+              value={lastName}
+              onChange={handleLastNameChange}
+              required
+            /><br /><br />
+            <button type="submit">Submit</button>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+          </form>
+          {submitted && <p>Full name: {fullName}</p>}
+        </div>
+      );
 };
 
 export default FullNameDisplay;
