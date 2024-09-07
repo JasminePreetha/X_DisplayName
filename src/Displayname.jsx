@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const FullNameDisplay = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (firstName && lastName) {
+      setFullName(`${firstName} ${lastName}`);
+    } else {
+      setFullName('');
+    }
+  }, [firstName, lastName]);
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -20,7 +28,6 @@ const FullNameDisplay = () => {
     if (!firstName || !lastName) {
       setError('Please fill in both first and last names!');
     } else {
-      setFullName(`${firstName} ${lastName}`);
       setError(null);
     }
   };
