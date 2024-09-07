@@ -59,5 +59,4 @@ const FullNameDisplay = () => {
     </div>
   );
 };
-
 export default FullNameDisplay;
