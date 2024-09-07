@@ -16,10 +16,18 @@ function App() {
   const [lastName, setLastName] = useState('');
   const [fullName, setFullName] = useState('');
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (firstName && lastName) {
+  //     setFullName(`Full Name: ${firstName} ${lastName}`);
+  //   }
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (firstName && lastName) {
       setFullName(`Full Name: ${firstName} ${lastName}`);
+    } else {
+      setFullName(''); // Reset fullName state to empty string
     }
   };
 
